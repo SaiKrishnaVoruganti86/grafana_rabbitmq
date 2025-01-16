@@ -1,0 +1,35 @@
+version: '3.8'
+
+networks:
+  monitoring:
+    driver: bridge
+
+services:
+  rabbitmq:
+    image: rabbitmq:management
+    container_name: rabbitmq
+    networks:
+      - monitoring
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+      - "15692:15692" 
+
+  prometheus:
+    image: prom/prometheus
+    container_name: prometheus
+    networks:
+      - monitoring
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+
+  grafana:
+    image: grafana/grafana
+    container_name: grafana
+    networks:
+      - monitoring
+    ports:
+      - "3000:3000"
+

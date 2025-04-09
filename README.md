@@ -1,6 +1,6 @@
 # grafana_rabbitmq  
 
-Certainly! Here's a comprehensive README file with step-by-step instructions to set up the Grafana-RabbitMQ monitoring project:
+Here's a comprehensive README file with step-by-step instructions to set up the Grafana-RabbitMQ monitoring project:
 
 ---
 
